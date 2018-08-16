@@ -2,13 +2,38 @@
 <html>
 <head>
 	<title>Projeto</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+	<script src"js/jquery-3.2.1.js"></script>
+	<script src"js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form name="user_form" method="post">
-		<input type="text" name="email" value="" placeholder="Email">
-		<input type="text" name="nome" value="" placeholder="Nome">
-		<input type="text" name="telefone" value="" placeholder="Telefone">
-		<input type="text" name="cpf" value="" placeholder="CPF">
-	</form>
+	<div class="jumbotron">
+		<h1>Cadastro de Usuário</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-12" style="padding:4vw;">
+		    <form name="user_form" method="post">
+				<p>
+					<label> Nome do projeto </label><br>
+				    <input type="text" name="projeto" value="" placeholder="Projeto">
+				</p>
+				<p>
+					<label> Data de Início </label><br>
+				    <input type="text" name="inicio" value="" placeholder="Inicio">
+				<p>
+					<label> Participantes </label><br>
+				    <input type="text" name="participantes" value="" placeholder="Participantes">
+				</p>
+				<p>
+					<label> Previsão de término </label><br>
+				    <input type="text" name="termino" value="" placeholder="Termino">
+				</p>
+				<p>
+					<input class="btn-danger" type="submit" value="Enviar">
+				</p>
+		    </form>
+		</div>
+	</div>
 </body>
 </html>
