@@ -5,21 +5,15 @@ fs = require('fs');
 var server = http.createServer( function (req, res) {
 	console.log(req.url);
 
+	/*
+	Arquivos a serem direcionados
+	usuario.html
+	projeto.html
+	contribuicao.html
+	recebimento.html
+	*/
 	if (req.url=='/') {
-		res.write('Welcome to http nodejs');
-		res.end();
-	} else
-	if (req.url=='/customer') {
-		res.write('Welcome to Customer page');
-		res.end();
-	} else
-	if (req.url=='/admin') {
-		res.write('Welcome to Admin page');
-		res.end();
-	} else
-	if (req.url=='/msg') {
-		// res.write('msg.html');
-		fs.readFile(__dirname + '/msg.html', function(err, data){
+		fs.readFile(__dirname + '/index.html', function(err, data){
 			if(err) {
 				res.writeHead(500);
 				return res.end('Error loading index.html');
@@ -27,7 +21,46 @@ var server = http.createServer( function (req, res) {
 			res.writeHead(200);
 			res.end(data);
 		});
-		// res.end();
+	} else
+	if (req.url=='/usuario') {
+		fs.readFile(__dirname + '/usuario.html', function(err, data){
+			if(err) {
+				res.writeHead(500);
+				return res.end('Error loading usuario.html');
+			}
+			res.writeHead(200);
+			res.end(data);
+		});
+	} else
+	if (req.url=='/projeto') {
+		fs.readFile(__dirname + '/projeto.html', function(err, data){
+			if(err) {
+				res.writeHead(500);
+				return res.end('Error loading projeto.html');
+			}
+			res.writeHead(200);
+			res.end(data);
+		});
+	} else
+	if (req.url=='/contribuicao') {
+		fs.readFile(__dirname + '/contribuicao.html', function(err, data){
+			if(err) {
+				res.writeHead(500);
+				return res.end('Error loading contribuicao.html');
+			}
+			res.writeHead(200);
+			res.end(data);
+		});
+	} else
+	if (req.url=='/recebimento') {
+		fs.readFile(__dirname + '/recebimento.html', function(err, data){
+			if(err) {
+				res.writeHead(500);
+				return res.end('Error loading recebimento.html');
+			}
+			res.writeHead(200);
+			res.end(data);
+		});
 	} else
 	{
 		res.write('Page not found');
