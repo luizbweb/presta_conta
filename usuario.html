@@ -19,14 +19,14 @@
 				    <input type="text" name="email" value="" placeholder="Email">
 				</p>
 				<p>
-					<label> lalalalaal </label><br>
+					<label> Nome </label><br>
 				    <input type="text" name="nome" value="" placeholder="Nome">
 				<p>
 					<label> Telefone </label><br>
 				    <input type="text" name="telefone" value="" placeholder="Telefone">
 				</p>
 				<p>
-					<label> passaport </label><br>
+					<label> CPF </label><br>
 				    <input type="text" name="cpf" value="" placeholder="CPF">
 				</p>
 				<p>
@@ -35,5 +35,39 @@
 		    </form>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/jquery.mask.min.js" ></script>
+<script type="text/javascript">
+
+// Aplica máscara ao campos
+jQuery('.campo-cpf').mask('000.000.000-00', {reverse: true});
+jQuery('.campo-telefone').mask('(00)0000-00000');
+jQuery('.ref-tel').mask('(00)0000-00000');
+jQuery('.campo-cep').mask('00000-000');
+
+
+// Envio dos campos por email - mova para um arquivo .js
+jQuery("#enviar").click(function(e){
+	e.preventDefault();
+	jQuery("#enviar").css( "background-color", "red" );
+	var forwhat = "Cadastro: ";
+    var name = jQuery(".campo-nome-contato").val();
+    var email = jQuery(".campo-email").val();
+    var presta_numb = jQuery("#_wpnonce").val();
+    var message;
+    
+    jQuery('input').each( function() {
+		message += jQuery( this ).val();
+    	// console.log( jQuery( this ).val() ); 
+    });
+
+    var data = { action:'presta_sendmail', forwhat:forwhat, name:name, email:email, message:message, presta_numb:presta_numb };
+    jQuery.post('presta_ajax.js', data, function(response) {
+    	console.log(response);
+    	jQuery("#enviar").css( "background-color", "#eee" );
+		jQuery("#enviar").parent().append(response);
+	});
+});
+
+</script>
 </body>
 </html>
