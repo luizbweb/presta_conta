@@ -13,29 +13,30 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12" style="padding:4vw;">
-		    <form name="user_form" method="post">
+		    <form name="cont_form" method="post">
 				<p>
 					<label> Email </label><br>
-				    <input type="text" name="email" value="" placeholder="Email">
+				    <input type="email" name="email" value="" placeholder="Email">
 				</p>
 				<p>
 					<label> Data  </label><br>
-				    <input type="text" name="data" value="" placeholder="Data">
+				    <input type="date" name="data" value="" placeholder="Data">
 				<p>
 					<label> Valor  </label><br>
 				    <input type="text" name="valor" value="" placeholder="Valor">
 				</p>
 				<p>
-					<label> Comprovante </label><br>
-					<label class="btn btn-primary">	Arquivo&hellip; 
-					<input type="file" style="display: none;" id="BSbtnsuccess" placeholder="Valor">
-					</label>
+					<label> Descrição </label><br>
+					<textarea cols="100" rows="5" placeholder="Descreva sua contribuição"></textarea>
+					<!-- <label class="btn btn-warning">	Arquivo&hellip; </label>
+					<input type="file" style="display: none;" id="BSbtnsuccess" placeholder="Valor"> -->
 				</p>
 				<p>
-					<input class=".btn-block" type="submit" value="Enviar">
+					<input class="btn btn-primary" type="submit" value="Enviar">
 				</p>
 		    </form>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
 	</body>
 </html>
