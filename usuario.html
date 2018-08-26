@@ -50,11 +50,11 @@
 				    <input type="text" name="nome" value="" placeholder="Nome">
 				<p>
 					<label> Telefone </label><br>
-				    <input type="text" name="telefone" value="" placeholder="Telefone">
+				    <input class="tel" type="text" name="telefone" value="" placeholder="Telefone">
 				</p>
 				<p>
 					<label> CPF </label><br>
-				    <input type="text" name="cpf" value="" placeholder="CPF">
+				    <input class="cpf" type="text" name="cpf" value="" placeholder="CPF">
 				</p>
 				<p>
 					<input class="btn btn-primary" type="submit" value="Enviar">
@@ -62,17 +62,20 @@
 		    </form>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.mask.js">
+		
+	</script>
+	<script type="text/javascript">
+		// Aplica máscara ao campos
+		$( document ).ready(function() {
+			$('.cpf').mask('000.000.000-00');
+			$('.tel').mask('(00)0000-00000');
+		});
+		//$('.cep').mask('00000-000');
+	</script>
 <script type="text/javascript">
 
-// Aplica máscara ao campos
-jQuery('.campo-cpf').mask('000.000.000-00', {reverse: true});
-jQuery('.campo-telefone').mask('(00)0000-00000');
-jQuery('.ref-tel').mask('(00)0000-00000');
-jQuery('.campo-cep').mask('00000-000');
-
-
-// Envio dos campos por email - mova para um arquivo .js
+/*// Envio dos campos por email - mova para um arquivo .js
 jQuery("#enviar").click(function(e){
 	e.preventDefault();
 	jQuery("#enviar").css( "background-color", "red" );
@@ -94,7 +97,7 @@ jQuery("#enviar").click(function(e){
 		jQuery("#enviar").parent().append(response);
 	});
 });
-
+*/
 </script>
 </body>
 </html>

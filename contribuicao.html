@@ -47,10 +47,10 @@
 				</p>
 				<p>
 					<label> Data  </label><br>
-				    <input type="date" name="data" value="" placeholder="Data">
+				    <input class="data" type="date" name="data" value="" placeholder="Data">
 				<p>
-					<label> Valor  </label><br>
-				    <input type="text" name="valor" value="" placeholder="Valor">
+					<label> Valor (R$) </label><br>
+				    <input class="valor" type="text" name="valor" value="" placeholder="0,00">
 				</p>
 				<p>
 					<label> Descrição </label><br>
@@ -65,5 +65,12 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript">
+
+		// Aplica máscara ao campos
+		// jQuery('.data').mask('00/00/0000');
+		// jQuery('.valor').mask('(00)0000-00000');
+
+	</script>
 	</body>
 </html>
