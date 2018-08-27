@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Projeto</title>
 	<meta charset="utf-8">
+	<title>Cadastro de Recebimento</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/style.css"></link>
 	<script src"js/jquery-3.2.1.js"></script>
@@ -10,8 +10,7 @@
 </head>
 <body>
 	<div class="jumbotron">
-		<h1>Presta Conta</h1>
-		<h2>Cadastro de novos projetos em breve...</h2>
+		<h1>Recebimento</h1>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,19 +20,19 @@
 			<nav class="navbar navbar-dark bg-dark">
 				<ul class="navbar-nav mr-auto">
 			    	<li class="nav-item">
-			       		<a class="nav-link" href="./index">Home <span class="sr-only">(current)</span></a>
+			       		<a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
 			    	</li>
 			      	<li class="nav-item">
-						<a class="nav-link" href="usuario">Usuário</a>
-			    	</li>
-			    	<li class="nav-item">
-						<a class="nav-link" href="recebimento">Recebimento</a>
-			    	</li>
-			    	<li class="nav-item">
-						<a class="nav-link" href="contribuicao">Contribuição</a>
+						<a class="nav-link" href="usuario.html">Usuário</a>
 			    	</li>
 			    	<li class="nav-item active">
-						<a class="nav-link" href="projeto">Projeto</a>
+						<a class="nav-link" href="recebimento.html">Recebimento</a>
+			    	</li>
+			    	<li class="nav-item">
+						<a class="nav-link" href="contribuicao.html">Contribuição</a>
+			    	</li>
+			    	<li class="nav-item">
+						<a class="nav-link" href="projeto.html">Projeto</a>
 			    	</li>
 			    </ul>
 			</nav>
@@ -41,27 +40,31 @@
 	</nav>
 	<div class="row">
 		<div class="col-md-12" style="padding:4vw;">
-		    <form name="project_form" method="post">
+		    <form name="receive_form" method="post">
 				<p>
-					<label> Nome do projeto </label><br>
-				    <input disabled type="text" name="projeto" value="" placeholder="Projeto">
+					<label> Email </label><br>
+				    <input type="email" name="email" value="" placeholder="Email">
 				</p>
 				<p>
-					<label> Data de Início </label><br>
-				    <input disabled type="text" name="inicio" value="" placeholder="Inicio">
+					<label> Data  </label><br>
+				    <input type="date" name="data" value="" placeholder="Data">
 				<p>
-					<label> Participantes </label><br>
-				    <input disabled type="text" name="participantes" value="" placeholder="Participantes">
+					<label> Valor (R$) </label><br>
+				    <input type="text" name="valor" value="" placeholder="Valor">
 				</p>
 				<p>
-					<label> Previsão de término </label><br>
-				    <input disabled type="text" name="termino" value="" placeholder="Termino">
+					<label> Comprovante </label><br>
+					<!-- <label class="btn btn-warning">	Arquivo&hellip; </label> -->
+					<input type="file" placeholder="Valor">
+
 				</p>
 				<p>
-					<input class="btn-danger" type="submit" value="Enviar">
+					<input class="btn btn-primary" type="submit" value="Enviar">
 				</p>
 		    </form>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+	
 </body>
 </html>
