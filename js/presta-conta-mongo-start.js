@@ -8,20 +8,17 @@ const assert = require('assert');
 const url = 'mongodb://localhost:27017';
 
 // Database Name
-const dbName = 'test';
+const dbName = 'presta-conta-db';
 
 // Use connect method to connect to the server
-
 MongoClient.connect(url, function (err, client) {
 	assert.equal(null, err);
 	console.log("Connected sucessfully to server");
-
 	const db = client.db(dbName);
-
 	client.close();
-
 });
 
+// Use to insert documentens into a colection
 const insertDocuments = function(db, callback) {
   // Get the documents collection
   const collection = db.collection('documents');
@@ -36,15 +33,3 @@ const insertDocuments = function(db, callback) {
     callback(result);
   });
 }
-
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
-
-  insertDocuments(db, function() {
-    client.close();
-  });
-});
