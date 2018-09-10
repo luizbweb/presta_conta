@@ -36,7 +36,7 @@ const insertDocuments = function(db, callback) {
     callback(result);
   });
 }
-
+/*
 // Use connect method to connect to the server
 MongoClient.connect(url, function(err, client) {
   assert.equal(null, err);
@@ -47,4 +47,4 @@ MongoClient.connect(url, function(err, client) {
   insertDocuments(db, function() {
     client.close();
   });
-});
+});*/

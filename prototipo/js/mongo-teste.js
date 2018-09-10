@@ -2,6 +2,16 @@
 
 // Essa versão aparentemente não funciona mais.
 
+/*
+
+{projeto: <nome>, 
+	{usuario: <nome>,  
+		{contribuicao: <valor>,
+		}
+	}
+}
+
+*/
 
 var mongo = require('mongodb'),
 	Server = mongo.Server,
