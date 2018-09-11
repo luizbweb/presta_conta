@@ -4,19 +4,16 @@
 
 
 var mongo = require('mongodb'),
-	Server = mongo.Server,
-	Db = mongo.Db;
+Server = mongo.Server,
+Db = mongo.Db;
 var server = new Server('localhost', 27017, {auto_reconnect: true});
 var database = new Db('test', server);
 
-database.collection('employee',
-	function(err,coll){
+database.collection('employee',	function(err,coll){
 		var employee = {name:'user1', email:'user1@email.com', country: 'germany'}; 
-		
 		//Insert. 
-		coll.insert( employee, function (err){ 
-		if(err) 
-			console.log(err);
+		coll.insertOne( employee, function (err){ 
+		if(err)	console.log(err);
 		else 
 		console.log('inserted data was success'); 
 	});

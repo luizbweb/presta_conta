@@ -21,7 +21,7 @@ MongoClient.connect(url, {useNewUrlParser: true}, function (err, client) {
 // Use to insert documentens into a colection
 const insertDocuments = function(db, callback) {
   // Get the documents collection
-  const collection = db.collection('documents');
+  const collection = db.collection('docs');
   // Insert some documents
   collection.insertMany([
     {a : 1}, {a : 2}, {a : 3}
