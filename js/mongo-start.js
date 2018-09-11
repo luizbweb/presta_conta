@@ -12,14 +12,13 @@ const dbName = 'test';
 
 // Use connect method to connect to the server
 
-MongoClient.connect(url, function (err, client) {
-	assert.equal(null, err);
-	console.log("Connected sucessfully to server");
+MongoClient.connect(url, {useNewUrlParser: true} , function (err, client) {
+  assert.equal(null, err);
+  console.log("Connected sucessfully to server");
 
-	const db = client.db(dbName);
+  const db = client.db(dbName);
 
-	client.close();
-
+  client.close();
 });
 
 const insertDocuments = function(db, callback) {
