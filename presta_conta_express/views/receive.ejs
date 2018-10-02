@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+        <p>E-Mail:<input type="text" name="email" value="<%= doc.email %>" /></p>
+        <p>Data:<input type="text" name="date" value="" /></p>
+        <p>Valor:<input type="text" name="value" value="" /></p>
+      <input type="submit" value="Salvar" />
+    </form>
+  </body>
+</html>

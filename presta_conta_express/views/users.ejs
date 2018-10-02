@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% docs.forEach(function(user){ %>
+        <li>
+          <a href="/user/edituser/<%= user._id %>"><%= user.name %></a>
+          <a href="/user/deleteuser/<%= user._id %>" 
+            onclick="return confirm('Tem certeza que deseja excluir?');"> || Excluir></a>
+          <a href="/user/receiveuser/<%= user._id %>" > || Contribuição></a> 
+        </li>
+        
+      <% }) %>
+    </ul>
+  </body>
+</html>
