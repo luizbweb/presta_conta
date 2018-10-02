@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+        <p>E-Mail:<input type="text" name="email"  /></p>
+        <p>Password:<input type="password" name="password"  /></p>
+        <p>Nome:<input type="text" name="name"  /></p>
+        <p>Telefone:<input type="text" name="phone"  /></p>
+        <p>CPF:<input type="text" name="cpf"  /></p>
+      <input type="submit" value="Salvar" />
+    </form>
+    <% if(message) { %>
+      <p>
+        <label style="color:Red"><%= message %></label>
+      </p>
+    <%}%>
+  </body>
+</html>
