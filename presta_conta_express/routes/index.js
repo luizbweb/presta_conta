@@ -16,6 +16,10 @@ router.get('/', global.authenticationMiddleware(), function(req, res, next) {
   res.render('index', {title: req.user.username});
 });
 
+router.get('/header', global.authenticationMiddleware(), function(req, res, next) {
+  res.render('header', {title: req.user.username});
+});
+
 
 /* GET home page. */
 router.get('/new', function(req, res, next) {
