@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+        <p>E-Mail:<input type="text" name="email" value="<%= doc.email %>" readonly /></p>
+        <p>Nome:<input type="text" name="name" value="<%= doc.name %>" /></p>
+        <p>Telefone:<input type="text" name="phone" value="<%= doc.phone %>" /></p>
+        <p>CPF:<input type="text" name="cpf" value="<%= doc.cpf %>" /></p>
+      <input type="submit" value="Salvar" />
+    </form>
+  </body>
+</html>

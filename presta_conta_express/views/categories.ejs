@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% docs.forEach(function(category){ %>
+        <li>
+          <a href="/category/editcategory/<%= category._id %>"><%= category.description %></a>
+          <a href="/category/deletecategory/<%= category._id %>" 
+            onclick="return confirm('Tem certeza que deseja excluir?');"> || Excluir></a>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="/category/newcategory">Nova categoria</a>
+  </body>
+</html>
